@@ -5,9 +5,9 @@ from bs4 import BeautifulSoup
 if __name__ == '__main__':
     server = 'http://www.biqukan.com/'
     target = 'http://www.biqukan.com/1_1094'
-    requests_target = requests.get(url=target)
+    requests_target = requests.get(target)
     text = requests_target.text
-    beautiful = BeautifulSoup(text).find_all('div', class_='listmain')
+    beautiful = BeautifulSoup(text).find_all('div', 'listmain')
     a_bf = BeautifulSoup(str(beautiful[0]))
     a = a_bf.find_all('a')
     for each in a:
